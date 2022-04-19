@@ -58,7 +58,7 @@ def plot_county(county):
     FIPSs['FIPS'] = FIPSs.FIPS.astype(int).astype(str).str.zfill(5)
     @st.cache(ttl=3*60*60, suppress_st_warning=True)
     def get_testing_data(County):
-        apiKey = '9fe19182c5bf4d1bb105da08e593a578'
+        apiKey = 'b021c144e9664f07a77cade823b7393b'
         if len(County) == 1:
             #print(len(County))
             f = FIPSs[FIPSs.County == County[0]].FIPS.values[0]
