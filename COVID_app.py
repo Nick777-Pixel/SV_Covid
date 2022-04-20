@@ -433,7 +433,7 @@ st.markdown('## Select counties of interest')
 CA_counties = confirmed[confirmed.Province_State == 'California'].Admin2.unique().tolist()
 WI_counties = confirmed[confirmed.Province_State == 'California'].Admin2.unique().tolist()
 
-COUNTIES_SELECTED = st.multiselect('Select counties', CA_counties, WI_counties, default=['Los Angeles'])
+COUNTIES_SELECTED = st.multiselect('Select counties', CA_counties, default=['Los Angeles'])
 
 st.sidebar.markdown("One of the key metrics for which data are widely available is the estimate of **daily new cases per 100,000 population**. Here, in following graphics, we will track")
 
