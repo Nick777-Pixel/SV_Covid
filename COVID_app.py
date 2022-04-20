@@ -431,6 +431,7 @@ st.sidebar.markdown("COVID-Local provides basic key metrics against which to ass
 st.sidebar.markdown('For additional information  please contact *support@appmuno.com*  https://appmuno.com')
 st.markdown('## Select counties of interest')
 CA_counties = confirmed[confirmed.Province_State == 'California'].Admin2.unique().tolist()
+WI_counties = confirmed[confirmed.Province_State == 'California'].Admin2.unique().tolist()
 
 COUNTIES_SELECTED = st.multiselect('Select counties', CA_counties, default=['Yolo'])
 
