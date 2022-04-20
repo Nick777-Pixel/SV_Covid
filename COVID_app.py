@@ -58,7 +58,7 @@ def plot_county(county):
     FIPSs['FIPS'] = FIPSs.FIPS.astype(int).astype(str).str.zfill(5)
     @st.cache(ttl=3*60*60, suppress_st_warning=True)
     def get_testing_data(County):
-        apiKey = 'b021c144e9664f07a77cade823b7393b'
+        apiKey = '9fe19182c5bf4d1bb105da08e593a578'
         if len(County) == 1:
             #print(len(County))
             f = FIPSs[FIPSs.County == County[0]].FIPS.values[0]
@@ -428,10 +428,9 @@ st.sidebar.markdown('## **EpiCenter for Disease Dynamics**')
 st.sidebar.markdown('**School of Veterinary Medicine   UC Davis**') 
 st.sidebar.markdown("## Key COVID-19 Metrics")
 st.sidebar.markdown("COVID-Local provides basic key metrics against which to assess pandemic response and progress toward reopening. See more at https://www.covidlocal.org/metrics/")
-st.sidebar.markdown('For additional information  please contact *support@appmuno.com*  https://appmuno.com')
+st.sidebar.markdown('For additional information  please contact *epicenter@ucdavis.edu*  https://ohi.vetmed.ucdavis.edu/centers/epicenter-disease-dynamics')
 st.markdown('## Select counties of interest')
 CA_counties = confirmed[confirmed.Province_State == 'California'].Admin2.unique().tolist()
-WI_counties = confirmed[confirmed.Province_State == 'California'].Admin2.unique().tolist()
 
 COUNTIES_SELECTED = st.multiselect('Select counties', CA_counties, default=['Yolo'])
 
@@ -443,7 +442,7 @@ st.sidebar.markdown("(C) Cumulative cases and deaths")
 st.sidebar.markdown("(D) Daily new tests*")
 
 st.sidebar.markdown("Data source: Data for cases are procured automatically from **COVID-19 Data Repository by the Center for Systems Science and Engineering (CSSE) at Johns Hopkins University**.")
-st.sidebar.markdown("The data is updated at least once a day or sometimes twice a day in the COVID-19 Data Repository.")
+st.sidebar.markdown("The data is updated at least once a day or sometimes twice a day in the COVID-19 Data Repository.  https://github.com/CSSEGISandData/COVID-19")
 st.sidebar.markdown("Infection rate, positive test rate, ICU headtoom and contacts traceed from https://covidactnow.org/")
 st.sidebar.markdown("*Calculation of % positive tests depends upon consistent reporting of county-wise tests performed. Rolling averages and proportions are not calculated if reporting is inconsistent over a period of 14 days.")
 st.sidebar.text('Report updated on '+ str(today))
@@ -468,6 +467,5 @@ plot_county(['Solano'])
 
 st.markdown("## State of California")
 plot_state()
-
 
 
