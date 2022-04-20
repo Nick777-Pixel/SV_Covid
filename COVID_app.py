@@ -469,6 +469,4 @@ st.markdown("## State of California")
 plot_state()
 
 
-st.<iframe src="https://covidactnow.org/embed/us/AL" title="CoVid Act Now" width="350" height="700"frameBorder="0"scrolling="no"></iframe>
-
 
